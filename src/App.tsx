@@ -10,6 +10,7 @@ import Contact from './pages/contact/Contact';
 const navigation = {
   brand: { name: "Bubblegumgemz", to: "" },
   links: [
+    { name: "Home", to: '/'},
     { name: "Shop", to: '/'},
     { name: "Yasmin", to: "/yasmin" },
     { name: "About Us", to: "/about" },
@@ -28,9 +29,10 @@ export default class App extends Component {
     return (
       <div className="App">
         <Navbar brand={brand} links={links} />
+        
+         {/* Takes links to routed pages */}
         <Router>
-        <Routes>
-          {/* Go to main page by accessing http://localhost:3000/main */}
+        <Routes>       
         <Route 
             path="/about" 
             element={<About/>}
