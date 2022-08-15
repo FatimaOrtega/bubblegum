@@ -12,7 +12,7 @@ import './navbar.css';
     const NavLinks: any = () => links.map((link: { name: string, to: string }) => <li key={link.name}><a href={link.to}>{link.name}</a></li>);
     return (
       <div className="nav">
-        <div className="Brand"> {brand.name}</div>
+        <div className="Brand">{brand.to}{brand.name}</div>
         <ul>
           <NavLinks />
         </ul>
