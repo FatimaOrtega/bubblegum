@@ -1,28 +1,29 @@
-import React from 'react';
-import './App.css';
-import data from "./components/content/main.json";
-import { Card } from './components/sections/cards/Card';
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import 'reset-css'
+import Navbar from './components/navbar/Navbar';
+import About from './pages/about/About';
 
-function App() {
-  return (
-  <div>
-  {data.eventCategories.map((event, index) => {
-          if (index < 3) {
-            return (
-              <Card
-                image={event.image}
-                title={event.title}
-                description={event.description}
-                date={event.date}
-                location={event.location}
-                type={event.type}
-              ></Card>
-            );
-          }
-        })}
-  </div>
-  );
+const navigation = {
+  brand: { name: "Bubblegumgemz", to: "/" },
+  links: [
+    { name: "Shop", to: '/about'},
+    { name: "Yasmin", to: "/blog" },
+    { name: "About Us", to: "/dev" },
+    
+  ]
 }
 
-export default App;
+export default class App extends Component {
+  // the 'public' is a typescript feature. 
+  public render() {
+
+	// Descructured object for cleaner code :-)
+    const { brand, links } = navigation;
+
+    return (
+      <div className="App">
+        <Navbar brand={brand} links={links} />
+      </div>
+    );
+  }
+}

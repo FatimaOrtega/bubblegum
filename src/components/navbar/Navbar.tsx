@@ -1,48 +1,24 @@
-import React from 'react';
+import * as React from 'react'
 import './navbar.css';
-import {
-  Nav,
-  NavLink,
-  Bars,
-  NavMenu,
-  NavBtn,
-  NavBtnLink,
-} from './NavbarElements';
-  
-const Navbar = () => {
-  return (
-    <>
-      <Nav>
-        <Bars />
-  
-        <NavMenu>
-          <NavLink to='/about' activeStyle>
-            About
-          </NavLink>
-          <NavLink to='/events' activeStyle>
-            Events
-          </NavLink>
-          <NavLink to='/annual' activeStyle>
-            Annual Report
-          </NavLink>
-          <NavLink to='/team' activeStyle>
-            Teams
-          </NavLink>
-          <NavLink to='/blogs' activeStyle>
-            Blogs
-          </NavLink>
-          <NavLink to='/sign-up' activeStyle>
-            Sign Up
-          </NavLink>
-          {/* Second Nav */}
-          {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
-        </NavMenu>
-        <NavBtn>
-          <NavBtnLink to='/signin'>Sign In</NavBtnLink>
-        </NavBtn>
-      </Nav>
-    </>
-  );
-};
+
+
+
+
+  const Navbar = (props: {
+    brand: { name: string; to: string },
+    links: Array<{ name: string, to: string }>
+  }) => {
+    const { brand, links } = props;
+    const NavLinks: any = () => links.map((link: { name: string, to: string }) => <li key={link.name}><a href={link.to}>{link.name}</a></li>);
+    return (
+      <div className="nav">
+        <div className="Brand"> {brand.name}</div>
+        <ul>
+          <NavLinks />
+        </ul>
+      </div>
+    )
+  };
+
   
 export default Navbar;
