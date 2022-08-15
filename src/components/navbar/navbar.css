@@ -7,20 +7,24 @@
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
+    text-decoration: none;
     
   }
   
   .Brand {
     font-weight: bold;
     font-style: italic;
-    margin-left: 1rem;
-    padding-right: 1rem;
+    margin-left: 2rem;
+    padding-right: 2rem;
+    text-decoration: none;
+    font-size: 20px;
   }
   
   ul {
     display: flex;
-    
-    
+    text-decoration: none;
+    margin-right: 2rem;
+    text-align: center;
     
   }
   
@@ -28,23 +32,18 @@ li {
     flex: 0 0 auto;
     -webkit-box-align: center;
     -webkit-box-pack: center;
-    -webkit-tap-highlight-color: transparent;
     align-items: center;
-    color: #999;
     height: 100%;
     justify-content: center;
     text-decoration: none;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    -webkit-tap-highlight-color: transparent;
-    align-items: center;
-    color: #999;
     display: flex;
-    font-size: 14px;
+    font-size: 17px;
     height: 50px;
-    justify-content: center;
     line-height: 16px;
     margin: 0 10px ;
     text-decoration: none;
     white-space: nowrap; 
 }
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
